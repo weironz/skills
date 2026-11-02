@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# 提交前扫描暂存区中的敏感信息（公开仓库）。确认是误报时用 git commit --no-verify 跳过。
+exec "$(git rev-parse --show-toplevel)/scripts/check-secrets.sh" --staged

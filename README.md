@@ -47,7 +47,9 @@ skills/
 scripts/
 ├── link-skills.sh    # 把 skill 软链接到本机各 agent 的 skill 目录
 ├── list-skills.sh    # 列出全部 skill 及其所属分组
-└── check-secrets.sh  # 提交前扫描内网 IP、token、内部域名
+├── check-secrets.sh  # 扫描内网 IP、token、内部域名（--staged 只扫描暂存区）
+└── install-hooks.sh  # 启用 .githooks/pre-commit（每次 clone 后运行一次）
+.githooks/pre-commit  # 每次提交前自动运行 check-secrets --staged
 .claude-plugin/       # Claude Code 插件清单（plugin.json / marketplace.json）
 ```
 
@@ -60,6 +62,15 @@ scripts/
 ├── scripts/          # 可以直接运行的脚本
 └── evals/            # 测试用例（claude plugin eval 格式）
 ```
+
+## 参与维护
+
+```bash
+git clone https://github.com/weironz/skills.git && cd skills
+scripts/install-hooks.sh     # 启用提交前的敏感信息检查
+```
+
+内部关键词（内部域名、机房代号等）可以写进 `.secrets-denylist`，每行一个正则。这个文件已加入 .gitignore，不会被提交。
 
 ## License
 

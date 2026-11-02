@@ -26,7 +26,7 @@ Skill 放在 `skills/<分组>/<skill-name>/` 下：
 
 ## 公开仓库的安全要求
 
-这是公开仓库。提交前必须运行 `scripts/check-secrets.sh`，并且确保不包含以下内容：
+这是公开仓库。clone 后先运行 `scripts/install-hooks.sh`，之后每次提交时 pre-commit 钩子会自动扫描暂存区（`scripts/check-secrets.sh --staged`）。命中规则时提交会被拦下，确认是误报才可以用 `--no-verify` 跳过。无论如何，都要确保仓库不包含以下内容：
 
 - 真实的内网 IP、内部域名、主机名与机房的对应关系、BMC 或交换机地址。
 - 任何 token、密码、私钥、License Key，以及内部镜像仓库地址。
