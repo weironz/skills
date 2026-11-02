@@ -1,0 +1,17 @@
+{
+  "name": "weironz",
+  "owner": {
+    "name": "weironz",
+    "url": "https://github.com/weironz"
+  },
+  "description": "weironz 的个人 agent skills 插件市场。",
+  "plugins": [
+    {
+      "name": "weironz-skills",
+      "source": "./",
+      "description": "GPU 集群、网络与运维排障类 skills，以及通用工作流。",
+      "category": "infra",
+      "keywords": ["skills", "infra", "gpu", "troubleshooting"]
+    }
+  ]
+}

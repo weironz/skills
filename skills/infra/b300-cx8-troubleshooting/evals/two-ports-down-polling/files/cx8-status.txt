@@ -1,0 +1,16 @@
+root@B300-5:~# for full in $(lspci -D -d 15b3: | awk '/Infiniband controller.*ConnectX-8/{print $1}'); do ... done
+0000:17:00.0  mlx5_0    DOWN    10G   numa=0
+0000:66:00.0  mlx5_5    DOWN    10G   numa=0
+0000:b2:00.0  mlx5_8    ACTIVE  800G  numa=1
+0000:d8:00.0  mlx5_9    ACTIVE  800G  numa=1
+0001:17:00.0  mlx5_10   ACTIVE  800G  numa=2
+0001:66:00.0  mlx5_11   ACTIVE  800G  numa=2
+0001:b2:00.0  mlx5_14   ACTIVE  800G  numa=3
+0001:d8:00.0  mlx5_15   ACTIVE  800G  numa=3
+root@B300-5:~# ibstat mlx5_0 | grep -E "State|Physical|Rate"
+                State: Down
+                Physical state: Polling
+                Rate: 10
+root@B300-5:~# dmesg -T | grep -E "mlx5_core 0000:(17|66):00.0" | tail -3
+[Mon Nov  9 08:12:44 2026] mlx5_core 0000:17:00.0: Port module event: module 0, Cable unplugged
+[Mon Nov  9 08:12:51 2026] mlx5_core 0000:66:00.0: Port module event: module 0, Cable unplugged

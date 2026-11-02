@@ -1,0 +1,34 @@
+===== HOST =====
+host=b300-21 kernel=6.8.0-100-generic uptime=up 25 minutes
+ofed=OFED-internal-26.01-1.0.0:
+===== BOOTS =====
+ -3 9a1c... Thu 2026-10-01 10:02:11 CST Sat 2026-11-07 02:41:09 CST
+ -2 3be0... Sat 2026-11-07 02:47:55 CST Sat 2026-11-07 09:12:30 CST
+ -1 77f2... Sat 2026-11-07 09:19:02 CST Sat 2026-11-07 10:31:44 CST
+  0 c4d9... Sat 2026-11-07 10:38:20 CST
+===== CX8 PER-DEVICE =====
+enumerated=8 expected=8
+0000:17:00.0 drv=NONE      link=64.0GT/sPCIex16 numa=0 ib=-        state=- phys=- rate=-
+0000:66:00.0 drv=NONE      link=64.0GT/sPCIex16 numa=0 ib=-        state=- phys=- rate=-
+0000:b2:00.0 drv=NONE      link=64.0GT/sPCIex16 numa=1 ib=-        state=- phys=- rate=-
+0000:d8:00.0 drv=NONE      link=64.0GT/sPCIex16 numa=1 ib=-        state=- phys=- rate=-
+0001:17:00.0 drv=NONE      link=64.0GT/sPCIex16 numa=2 ib=-        state=- phys=- rate=-
+0001:66:00.0 drv=NONE      link=64.0GT/sPCIex16 numa=2 ib=-        state=- phys=- rate=-
+0001:b2:00.0 drv=NONE      link=64.0GT/sPCIex16 numa=3 ib=-        state=- phys=- rate=-
+0001:d8:00.0 drv=NONE      link=64.0GT/sPCIex16 numa=3 ib=-        state=- phys=- rate=-
+summary: enumerated=8 bound=0 ib_devices=0 active=0
+===== MLX5 KEY KERNEL LOG boot 0 =====
+Nov 07 10:38:24 b300-21 kernel: mlx5_core 0000:17:00.0: firmware version: 40.50.1002
+Nov 07 10:38:44 b300-21 kernel: mlx5_core 0000:17:00.0: wait_fw_init:291:: Waiting for FW pre-initializing, timeout abort in 100s (0x83020000)
+Nov 07 10:40:24 b300-21 kernel: mlx5_core 0000:17:00.0: wait_fw_init:281:: Firmware over 120000 MS in pre-initializing state, aborting
+Nov 07 10:40:24 b300-21 kernel: mlx5_core 0000:17:00.0: probe_one:2409:: mlx5_init_one failed with error code -110
+===== NUMA MEMORY =====
+node0 total=755GiB free=748GiB (99%)
+node1 total=756GiB free=751GiB (99%)
+node2 total=756GiB free=752GiB (99%)
+node3 total=756GiB free=752GiB (99%)
+===== GPU =====
+gpu_count=8
+      8         State                                          : In Progress
+fabricmanager=failed
+openibd=failed

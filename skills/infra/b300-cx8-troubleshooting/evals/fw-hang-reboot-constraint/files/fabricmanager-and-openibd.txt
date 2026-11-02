@@ -1,0 +1,10 @@
+$ systemctl status nvidia-fabricmanager
+     Active: failed (Result: exit-code) since Sat 2026-11-07 10:57:31 CST
+Nov 07 10:56:31 b300-21 nvidia-fabricmanager-start.sh: Polling for at least one Infiniband device before starting Fabric Manager...
+Nov 07 10:57:31 b300-21 nvidia-fabricmanager-start.sh: No devices found in /sys/class/infiniband within 60 seconds.
+$ journalctl -u openibd -b
+Nov 07 10:39:02 b300-21 openibd[2291]: Detected old version of mlx5_core, unloading...
+Nov 07 10:39:02 b300-21 openibd[2291]: rmmod: ERROR: Module mlx5_core is in use
+Nov 07 10:39:02 b300-21 systemd[1]: openibd.service: Failed with result 'exit-code'.
+$ lsmod | grep mlx5_ib
+(empty)

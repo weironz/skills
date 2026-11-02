@@ -1,0 +1,19 @@
+root@b300-09:~# lspci -D -d 15b3:1023
+0000:17:00.0 Infiniband controller: Mellanox Technologies CX8 Family [ConnectX-8]
+0000:66:00.0 Infiniband controller: Mellanox Technologies CX8 Family [ConnectX-8]
+0000:b2:00.0 Infiniband controller: Mellanox Technologies CX8 Family [ConnectX-8]
+0000:d8:00.0 Infiniband controller: Mellanox Technologies CX8 Family [ConnectX-8]
+0001:17:00.0 Infiniband controller: Mellanox Technologies CX8 Family [ConnectX-8]
+0001:66:00.0 Infiniband controller: Mellanox Technologies CX8 Family [ConnectX-8]
+root@b300-09:~# nvidia-smi -L | wc -l
+6
+root@b300-09:~# lspci -D | grep -c "NVIDIA.*B300"
+6
+root@b300-09:~# journalctl -k -b | grep -iE "pcieport 0001:(af|d5)" | head -4
+Nov 10 14:02:11 b300-09 kernel: pcieport 0001:af:02.0: pciehp: Slot(23): Link Down
+Nov 10 14:02:11 b300-09 kernel: pcieport 0001:d5:02.0: pciehp: Slot(31): Link Down
+Nov 10 14:02:12 b300-09 kernel: pcieport 0001:af:02.0: AER: Uncorrectable (Fatal) error message received from 0001:af:02.0
+root@b300-09:~# last -x | head -3
+reboot   system boot  6.8.0-100-generi Tue Nov 10 14:00   still running
+shutdown system down  6.8.0-100-generi Tue Nov 10 13:52 - 14:00  (00:08)
+# 现场反馈：上午 11 点更换过一根前置风扇模组

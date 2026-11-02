@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: fw-hang-reboot-constraint
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Identifies the lowest failing layer as CX8 firmware/driver init (enumerated, no driver, pre-initializing -110),
+  locates T0 in the earlier boot (-3, 02:33) after an NUMA-constrained OOM during RDMA memory registration,
+  treats Fabric Manager/openibd failures as downstream symptoms, states that warm reboots cannot reset the hung
+  firmware and a BMC cold power cycle is required, explicitly says the "no reboot" constraint blocks the CX8 fix,
+  and recommends tracing the OOM cgroup/container to its memory configuration before restoring workload.

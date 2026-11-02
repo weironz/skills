@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: pcie-missing-with-gpu
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Classifies as PCIe enumeration/platform layer (2 CX8 + 2 GPU absent from lspci, root port Link Down + fatal AER
+  on 0001:af/d5), rejects reinstalling OFED/drivers since devices are not enumerated, ties the missing pairs to
+  shared upstream paths, flags the recent hardware maintenance (fan module swap) as a likely trigger to check
+  (cables/riser/seating), and recommends preserving evidence, a cold power cycle, then vendor hardware inspection.

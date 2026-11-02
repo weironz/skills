@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: two-ports-down-polling
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Classifies this as a port/physical-link problem (driver and FW fine, 6/8 ACTIVE), notes 10G is the default rate
+  of a down port not a real negotiation, uses Physical state Polling + "Cable unplugged" module events to point at
+  cable/optic/remote side, notes both bad ports share NUMA 0, gives mlxlink -m/-e and UFM/GUID next steps, and does
+  not recommend replacing the NIC or a cold power cycle as the first action.

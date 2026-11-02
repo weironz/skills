@@ -1,0 +1,15 @@
+{
+  "name": "weironz-skills",
+  "version": "0.1.0",
+  "description": "weironz 的个人 agent skills：GPU 集群、网络与运维排障，以及通用工作流。",
+  "author": {
+    "name": "weironz",
+    "url": "https://github.com/weironz"
+  },
+  "repository": "https://github.com/weironz/skills",
+  "license": "MIT",
+  "keywords": ["skills", "infra", "gpu", "nvidia", "infiniband", "troubleshooting"],
+  "skills": [
+    "./skills/infra/b300-cx8-troubleshooting"
+  ]
+}

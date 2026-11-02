@@ -1,0 +1,15 @@
+# journalctl -k -b -3 --since "2026-11-07 02:20" --until "2026-11-07 02:42"   (excerpt)
+Nov 07 02:31:40 b300-21 kernel: pt_main_thread: page allocation failure: order:0, mode:0x10dc0(GFP_KERNEL|__GFP_NORETRY|__GFP_ZERO), nodemask=2,cpuset=docker-5e0b77a1c2f94d0e8b1a.scope,mems_allowed=0-3
+Nov 07 02:31:40 b300-21 kernel:  mlx5_ib_reg_user_mr+0x96/0x2b0 [mlx5_ib]
+Nov 07 02:31:40 b300-21 kernel:  __ib_umem_get.part.0+0x406/0x4f0 [ib_uverbs]
+Nov 07 02:31:42 b300-21 kernel: oom-kill:constraint=CONSTRAINT_MEMORY_POLICY,nodemask=2,cpuset=docker-5e0b77a1c2f94d0e8b1a.scope,mems_allowed=0-3,global_oom,task=python3,pid=411902
+Nov 07 02:31:42 b300-21 kernel: Out of memory: Killed process 411902 (python3) total-vm:1209882112kB, anon-rss:1004133376kB, file-rss:20480kB, shmem-rss:0kB
+Nov 07 02:31:42 b300-21 kernel: Node 2 Normal free:39876kB boost:0kB min:56164kB low:846752kB
+Nov 07 02:31:42 b300-21 kernel: 805207921 pages RAM
+Nov 07 02:33:05 b300-21 kernel: mlx5_core 0001:17:00.0: print_health_info:504:(pid 0): Health issue observed, irisc not responding, severity(3) ERROR:
+Nov 07 02:33:05 b300-21 kernel: mlx5_core 0001:17:00.0: print_health_info:521:(pid 0): synd 0x7: irisc not responding
+Nov 07 02:33:12 b300-21 kernel: mlx5_core 0000:b2:00.0: print_health_info:521:(pid 0): synd 0x7: irisc not responding
+Nov 07 02:33:20 b300-21 kernel: mlx5_core 0000:17:00.0: print_health_info:521:(pid 0): synd 0x7: irisc not responding
+... (8 devices total by 02:34:10)
+Nov 07 02:34:55 b300-21 kernel: mlx5_core 0001:17:00.0: wait_func:1208:(pid 410077): DESTROY_MKEY(0x202) timeout. Will cause a leak of a command resource
+Nov 07 02:41:09 b300-21 systemd[1]: Reached target reboot.target - System Reboot.

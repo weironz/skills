@@ -1,0 +1,9 @@
+# skill-creator 评测工作区与产物
+*-workspace/
+evals/results/
+**/evals/results/
+*.skill
+# 本地敏感关键词清单
+.secrets-denylist
+.DS_Store
+.claude/
